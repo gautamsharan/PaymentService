@@ -9,7 +9,16 @@ public class PaymentGatewayChooserStrategy {
     @Autowired
     private RazorpayPaymentGateway razorpayPaymentGateway;
 
+    @Autowired
+    private StripePaymentGateway stripePaymentGateway;
+
     public IPaymentGateway getPaymentGateway() {
-        return razorpayPaymentGateway;
+        return stripePaymentGateway;
+//        if (Math.random() % 2 == 0) {
+//            return razorpayPaymentGateway;
+//        }
+//        else {
+//            return stripePaymentGateway;
+//        }
     }
 }
